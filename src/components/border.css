@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.outer-div{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px 0 50px 0;
+}
+.outer-div::after{
+    position: absolute;
+    width: 170%;
+    height: 170%;
+    content: "";
+    background-image: conic-gradient(from var(--a), transparent, transparent, transparent, #c8a217);
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.outer-div::before{
+    position: absolute;
+    width: 170%;
+    height: 170%;
+    content: "";
+    background-image: conic-gradient(from var(--a), transparent, transparent, transparent, #3cbdb1);
+    animation: animate 6s linear infinite;
+}
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@keyframes animate {
+    0%{
+        --a: 0deg;
+    }
+    100%{
+        --a: 360deg;
+    }
+}
